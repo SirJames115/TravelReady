@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3498db; /* Set your desired background color */
+    color: #fff; /* Set your desired text color */
+}
+
+.animated-icon {
+    font-size: 60px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+.btn-welcome {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #fff; /* Set your desired button background color */
+    color: #3498db; /* Set your desired button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
