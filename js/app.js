@@ -7,7 +7,7 @@ const submit = document.querySelector(".submit");
 // Classes
 const CHECK = 'fa-check-circle'
 const UNCHECK = 'fa-circle-thin'
-const LINE_THROUGH = 'LineThough'
+const LINE_THROUGH = 'lineThrough'
 
 // Show the current date
 const options = {
@@ -30,8 +30,8 @@ function addTripItem(item, id, done, trash) {
   const note = `
   <li class="item">
   <i class="fa ${DONE} co" job="complete" id="${id}"></i>
-  <p class="text ${DONE}">${item}</p>
-  <i class="fa fa-trash-o de" job="delete" id="${id}></i>
+  <p class="text ${LINE}">${item}</p>
+  <i class="fa fa-trash de" job="delete" id=${id}></i>
   </li>
   `;
   const position = "beforeend";
@@ -71,3 +71,29 @@ document.addEventListener("keyup", (e) => {
     input.value = "";
   }
 });
+
+function completeItem(element){
+  element.classList.toggle(CHECK)
+  element.classList.toggle(UNCHECK)
+  element.parentNode.querySelector('.text').classList.toggle(LINE_THROUGH)
+  LIST[element.id].done = LIST[element.id].done ? false : true;
+}
+
+function removeItem(element){
+  element.parentNode.parentNode.removeChild(element.parentNode);
+  LIST[element.id].trash = true;
+  // console.log(LIST[element.id].trash = true)
+}
+
+list.addEventListener('click',(e)=>{
+  element = e.target;
+  elementJob = element.attributes.job.value;
+
+  console.log(elementJob)
+
+  if(elementJob == 'complete'){
+    completeItem(element)
+  } else if(elementJob == 'delete'){
+    removeItem(element)
+  }
+})
