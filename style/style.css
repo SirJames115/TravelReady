@@ -112,6 +112,8 @@ body{
 }
 /* ------------ add item ------------ */
 .add-trip-item{
+    display: flex;
+    flex-direction: row-reverse;
     position: relative;
     width: 360px;
     height:40px;
@@ -127,7 +129,7 @@ body{
 
 .add-trip-item input{
     position: absolute;
-    left: 50px;
+    right: 50px;
     height: 35px;
     width: 310px;
     background-color: transparent;
