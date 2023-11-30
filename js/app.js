@@ -30,7 +30,7 @@ function addTripItem(item, id, done, trash) {
   const note = `
   <li class="item">
   <i class="fa ${DONE} co" job="complete" id="${id}"></i>
-  <p class="text ${LINE}">${item}</p>
+  <p class="text ${LINE}" job="text">${item}</p>
   <i class="fa fa-trash de" job="delete" id=${id}></i>
   </li>
   `;
